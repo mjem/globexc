@@ -99,7 +99,7 @@ def display_locals(f_locals, indent='', target=sys.stdout):
 		# on the bind variables, not __str__/__unicode__.
 		try:
 			value = unicode(v)
-		except Exception:  # (no exception type) pylint:disable=W0702
+		except Exception:  # (no exception type) pylint:disable=W0703
 			# we have to trap all exceptions here since str()/unicode() could throw anything
 			# and result in a confused stack trace irrelevant to the original error
 			value = '<error>'
@@ -173,7 +173,7 @@ def global_exception(exc_type, exc_value, exc_traceback):
 				trace=expanded_filename()))
 		# be very paranoid here as we are reading undocumented attributes of logging
 		if hasattr(logger, 'manager') and \
-				getattr(logger.manager, 'emittedNoHandlerWarning') == True:
+				getattr(logger.manager, 'emittedNoHandlerWarning') is True:
 			# make sure the user sees something even if logging is not initialised
 			# (as of python 2.7.5 the logging module suppresses all output if not
 			# initialised
@@ -213,13 +213,13 @@ def init_globexc(filename=None, context=None):
 		`context` (int): Number of lines of context around the current line in code
 			displays.
 	"""
-	global STACK_TRACE_FILENAME
+	global DEFAULT_STACK_TRACE_FILENAME
 	global CONTEXT_LINES
 
 	if filename is not None:
-		STACK_TRACE_FILENAME = filename
+		DEFAULT_STACK_TRACE_FILENAME = filename
 
 	if context is not None:
-		CONTEXT_LINS = context
+		CONTEXT_LINES = context
 
 	sys.excepthook = global_exception

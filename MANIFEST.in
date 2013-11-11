@@ -1,4 +1,8 @@
 include README.rst
 include ChangeLog.rst
 include extra/trace.dump
+include fabfile.py
+include setup.cfg
+include pylintrc
+include tests/sample.py
 

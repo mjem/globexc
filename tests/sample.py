@@ -8,6 +8,7 @@ from argparse import ArgumentParser
 
 from globexc import init_globexc
 
+
 def error():
 	"""Test function, throws an error."""
 	# set a local variable so we can test it appears in the dump file
