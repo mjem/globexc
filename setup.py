@@ -10,6 +10,12 @@ from globexc import __version__
 with open('README.rst') as f:
 	readme = f.read()
 
+readme = readme.replace(
+	'`<extra/trace.dump>`_',
+	'https://github.com/mjem/globexc/blob/master/extra/trace.dump').replace(
+	'  .. code::\n',
+	'')
+
 with open('ChangeLog.rst') as f:
 	history = f.read()
 
