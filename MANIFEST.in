@@ -1,0 +1,4 @@
+include README.rst
+include ChangeLog.rst
+include extra/trace.dump
+
