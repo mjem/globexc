@@ -1,0 +1,58 @@
+Exception object:
+  Class: <type 'exceptions.ZeroDivisionError'>
+  Text: integer division or modulo by zero
+  Attributes:
+    args: ('integer division or modulo by zero',)
+    message: integer division or modulo by zero
+
+Call stack:
+  Frame 3:
+    Filename:
+      tests/sample.py
+
+    Code:
+         11: def error():
+         12:     """Test function, throws an error."""
+         13:     # set a local variable so we can test it appears in the dump file
+         14:     my_var = 'a test variable'  # (unused var) pylint:disable=W0612
+    ->   15:     print(1 / 0)
+         16: 
+         17: 
+         18: def main():
+         19:     """Command line entry point."""
+
+    Vars:
+      my_var = a test variable (str)
+
+  Frame 2:
+    Filename:
+      tests/sample.py
+
+    Code:
+         45:         else:
+         46:             logging.basicConfig()
+         47: 
+         48:     if args.no_error is not False:
+    ->   49:         error()
+         50: 
+         51:     parser.exit('The end')
+         52: 
+         53: if __name__ == '__main__':
+
+    Vars:
+      args = Namespace(basic_log=False, no_error=True, no_init_log=True) ('argparse.Namespace)
+      parser = ArgumentParser(prog='sample.py', usage=None, description=None, version=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True) ('argparse.ArgumentParser)
+
+  Frame 1:
+    Filename:
+      tests/sample.py
+
+    Code:
+         50: 
+         51:     parser.exit('The end')
+         52: 
+         53: if __name__ == '__main__':
+    ->   54:     main()
+
+    Vars:
+      <none>

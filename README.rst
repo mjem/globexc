@@ -30,7 +30,7 @@ And the resulting terminal output:
 	CRITICAL Exception <type 'exceptions.ZeroDivisionError'> (tests/sample.py:15) integer
 	division or modulo by zero. Trace file written to '/home/user/trace.dump'.
 
-And for the stack trace see `<trace.dump>`_.
+And for the stack trace see `<extra/trace.dump>`_.
 
 Installation
 ------------
