@@ -7,7 +7,7 @@ message and also print a full stack trace including local variable contents.
 from __future__ import print_function
 from __future__ import unicode_literals
 
-__version__ = '0.1'
+__version__ = '0.1.0'
 
 import os
 import sys
